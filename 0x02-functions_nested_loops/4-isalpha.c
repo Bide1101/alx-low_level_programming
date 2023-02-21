@@ -7,7 +7,9 @@
 
 int _isalpha(int c)
 {
-	if (c++ <= 'z' && c++ >= 'Z')
+	char C;
+	
+	if (c++ <= 'z' && C++ >= 'Z')
 		return (1);
 	else
 		return (0);
