@@ -13,10 +13,8 @@ void print_alphabet_x10(void)
 
 	for (alpha = 'a'; alpha <= 'z'; alpha++)
 	{
-		if (print < 10)
+		if (print != '9')
 			_putchar(alpha);
 	}
 	_putchar('\n');
-	
 }
-
