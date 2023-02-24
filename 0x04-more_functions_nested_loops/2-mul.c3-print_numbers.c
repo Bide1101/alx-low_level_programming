@@ -10,10 +10,5 @@
 
 int mul(int a, int b)
 {
-	int a, b, mult;
-
-	for (a * b == mult)
-		_putchar (mult);
-
-	return (0);
+	return (a * b);
 }
