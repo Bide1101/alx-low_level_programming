@@ -9,12 +9,10 @@ void _puts_recursion(char *s)
 {
 	int i = 0;
 
-	while (i < s[i])
-	{	_putchar(s[i]);
-		i++;
-	}
-		_putchar(10);
-
 	if (s[i] == *s)
-		_putchar(10);
+
+	for (; i < s[i]; i++)
+		_putchar(s[i]);
+
+	_putchar(10);
 }
