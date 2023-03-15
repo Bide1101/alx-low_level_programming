@@ -11,7 +11,7 @@
 char *argstostr(int ac, char **av)
 
 {
-	int a, i, j = 0, len = 0;
+	int a, i, j, len = 0;
 	char *ptr, *str;
 
 	if (ac == 0 || av == NULL)
@@ -20,6 +20,8 @@ char *argstostr(int ac, char **av)
 	for (i = 0; i < ac; i++)
 	{
 		str = av[i];
+		j = 0;
+
 
 		while (str[j++])
 			len++;
