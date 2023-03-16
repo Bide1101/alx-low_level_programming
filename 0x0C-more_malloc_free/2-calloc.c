@@ -3,10 +3,10 @@
 
 /**
 * _calloc - allocates memory for an array
-*  @nmemb: number of elements to allocate memory for
+* @nmemb: number of elements to allocate memory for
 * @size: size of each element in bytes
 * Return: pointer to allocated memory, or NULL if allocation fails
-*/ 
+*/
 
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
