@@ -13,30 +13,31 @@
 
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
-	char *new_ptr, *p1;
-	unsigned int i;
+	char *new_ptr, *p1 = ptr;
+	unsigned int i, s;
 
-	if (new_size == 0 && ptr != NULL)
-	{
-		free(ptr);
-		return (NULL);
-	}
 
 	if (ptr == NULL)
 	{
 		new_ptr = malloc(new_size);
 		return (new_ptr);
 	}
+	if (new_size == 0 && ptr != NULL)
+	{
+		free(ptr);
+		return (NULL);
+	}
+	else if (new_size == old_size)
+		return (ptr);
 
 	new_ptr = malloc(new_size);
 	if (new_ptr == NULL)
 		return (NULL);
 
-	p1 = (char *)ptr;
-
-	for (i = 0; i < old_size && i < new_size; i++)
-		*new_ptr++ = *p1++;
-	}
+	if (new_size > old_size)
+		s = old_size;
+	for (i = 0; i < s; i++)
+		new_ptr[i] = p1[i];
 
 	free(ptr);
 	return (new_ptr);
