@@ -66,8 +66,7 @@ char *multiply(char *num1, char *num2)
 
 		for (j = len2 - 1; j >= 0; j--)
 		{
-			sum = (num1[i] - '0') * (num2[j] - '0');
-			sum += (result[i + j + 1] - '0') + carry;
+		sum = (num1[i] - '0') * (num2[j] - '0') + (result[i + j + 1] - '0') + carry;
 
 		carry = sum / 10;
 		result[i + j + 1] = (sum % 10) + '0';
