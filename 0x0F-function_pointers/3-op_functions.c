@@ -39,12 +39,14 @@ int op_mul(int a, int b)
 	return (a * b);
 }
 
- /**
-* op_mul - a diivded by b
-* @a: first int
-* @b: second int
-* Return: quotient of integers
+
+/**
+* op_div - a divided by b
+* @a: first integer
+* @b: second integer
+* Return: quotient
 */
+
 int op_div(int a, int b)
 {
 	if (b == 0)
@@ -55,12 +57,12 @@ int op_div(int a, int b)
 	return (a / b);
 }
 
- /**
-* op_mul - a modulo b
-* @a: first int
-* @b: second int
-* Return: remainder
-*/
+/**
+ * op_mod - a modulo b
+ * @a: first integer
+ * @b: second integer
+ * Return: remainder
+ */
 
 int op_mod(int a, int b)
 {
@@ -68,6 +70,6 @@ int op_mod(int a, int b)
 	{
 		printf("Error\n");
 		exit(100);
- 	}
+	}
 	return (a % b);
 }
