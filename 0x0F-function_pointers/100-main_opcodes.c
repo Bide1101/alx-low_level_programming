@@ -9,14 +9,14 @@
 
 void print_opcodes(int nbytes)
 {
-	unsigned char *p;
+	char *p;
 	int i;
 
-	p = (unsigned char *)print_opcodes;
+	p = (char *)print_opcodes;
 
 	for (i = 0; i < nbytes; i++)
 	{
-		printf("%02hhx", p[i]);
+		printf("%.2hhx", p[i]);
 		if (i < nbytes - 1)
 			printf(" ");
 	}
@@ -41,7 +41,7 @@ int main(int argc, char *argv[])
 	}
 
 	bytes = atoi(argv[1]);
-	if (bytes <= 0)
+	if (bytes < 0)
 	{
 		printf("Error\n");
 		exit (2);
