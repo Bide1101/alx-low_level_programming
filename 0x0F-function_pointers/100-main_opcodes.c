@@ -7,9 +7,8 @@
 * Return: void
 */
 
-void print_opcodes(int nbytes)
+void print_opcodes(char *p, int nbytes)
 {
-	char *p;
 	int i;
 
 	p = (char *)print_opcodes;
@@ -45,6 +44,6 @@ int main(int argc, char *argv[])
 		exit(2);
 	}
 
-	print_opcodes(bytes);
+	print_opcodes((char *)main, bytes);
 	return (0);
 }
