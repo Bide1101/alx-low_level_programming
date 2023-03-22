@@ -3,6 +3,7 @@
 
 /**
 * print_opcodes - prints opcodes
+* @p: address ofmain function
 * @nbytes: number of bytes
 * Return: void
 */
@@ -44,6 +45,6 @@ int main(int argc, char *argv[])
 		exit(2);
 	}
 
-	print_opcodes((char *)main, bytes);
+	print_opcodes((char *)&main, bytes);
 	return (0);
 }
