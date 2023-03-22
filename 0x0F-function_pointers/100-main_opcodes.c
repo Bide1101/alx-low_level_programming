@@ -13,9 +13,12 @@ void print_opcodes(int nbytes)
 	int i;
 
 	p = (unsigned char *)print_opcodes;
+
 	for (i = 0; i < nbytes; i++)
 	{
-		printf("%02x ", p[i]);
+		printf("%02hhx", p[i]);
+		if (i < nbytes - 1)
+			printf(" ");
 	}
 	printf("\n");
 }
