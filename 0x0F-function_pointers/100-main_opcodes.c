@@ -2,27 +2,7 @@
 #include <stdlib.h>
 
 /**
-* print_opcodes - prints opcodes
-* @p: address ofmain function
-* @nbytes: number of bytes
-* Return: void
-*/
-
-void print_opcodes(char *p, int nbytes)
-{
-	int i;
-
-	p = (char *)print_opcodes;
-
-	for (i = 0; i < nbytes - 1; i++)
-	{
-		printf("%02hhx ", p[i]);
-	}
-	printf("%02hhx\n", p[i]);
-}
-
-/**
-* main - controls how the program is called
+* main - prints the opcodes of its own function
 * @argc: argument count
 * @argv: argument vector
 * Return: 0 Always
@@ -30,21 +10,25 @@ void print_opcodes(char *p, int nbytes)
 
 int main(int argc, char *argv[])
 {
-	int bytes;
+	register int i, nbytes;
+	char *p = (char *)main;
 
-	if (argc !=  2)
+	if (argc != 2)
 	{
 		printf("Error\n");
 		exit(1);
 	}
 
-	bytes = atoi(argv[1]);
-	if (bytes < 0)
+	nbytes = atoi(argv[1]);
+	if (nbytes < 0)
 	{
 		printf("Error\n");
 		exit(2);
 	}
-
-	print_opcodes((char *)&main, bytes);
+	for (i = 0; i < nbytes - 1; i++)
+	{
+		printf("%.2hhx ", p[i]);
+	}
+	printf("%.2hhx\n", p[i]);
 	return (0);
 }
