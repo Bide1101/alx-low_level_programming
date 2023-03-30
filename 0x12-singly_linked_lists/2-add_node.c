@@ -2,16 +2,16 @@
 
 /**
  * _strlen - function that returns the length of a string.
- * @s : s is a character
- * Return: value is i
+ * @str : string
+ * Return: length of string
  */
 
-int _strlen(const char *s)
+int _strlen(const char *str)
 {
 	int i;
 
 	for (i = 0; str[i] != '\0'; i++)
-
+		;
 	return (i);
 }
 
