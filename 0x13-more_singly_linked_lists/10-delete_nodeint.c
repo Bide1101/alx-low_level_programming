@@ -25,12 +25,12 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 	{
 		while (tmp != NULL && count < index)
 		{
+			if (tmp->next == NULL)
+				return (-1);
 			tmp2 = tmp;
 			tmp = tmp->next;
 			count++;
 		}
-		if (tmp == NULL)
-			return (-1);
 
 		tmp2->next = tmp->next;
 		free(tmp);
