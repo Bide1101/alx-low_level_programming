@@ -24,18 +24,21 @@ size_t print_listint_safe(const listint_t *head)
 			{
 				printf("-> [%p] %d\n", (void *)curr, curr->n);
 				free(list);
-				exit(98);
+				return (num);
 			}
 		}
 		num++;
 		tmp_list = malloc(num * sizeof(listint_t *));
 		if (tmp_list == NULL)
+		{
+			free(list);
 			exit(98);
+		}
 
 		for (i = 0; i < num - 1; i++)
 			tmp_list[i] = list[i];
 
-		tmp_list[num - 1] = curr;
+		tmp_list[i] = curr;
 		free(list);
 		list = tmp_list;
 		printf("[%p] %d\n", (void *)curr, curr->n);
