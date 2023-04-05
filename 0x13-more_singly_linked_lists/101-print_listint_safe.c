@@ -9,9 +9,13 @@
 size_t print_listint_safe(const listint_t *head)
 {
 	size_t i, num = 0;
-	const listint_t *curr = head;
+	const listint_t *curr;
 	const listint_t **tmp_list, **list = NULL;
 
+	if (head == NULL)
+		exit(98);
+
+	curr = head;
 	while (curr != NULL)
 	{
 		for (i = 0; i < num; i++)
