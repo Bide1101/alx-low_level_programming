@@ -10,8 +10,8 @@
 ssize_t read_textfile(const char *filename, size_t letters)
 {
 	char *ptr;
-	int fp;
-	ssize_t copiedletters, readletters;
+	int fp, readletters;
+	ssize_t copiedletters
 
 	if (filename == NULL)
 		return (0);
@@ -44,5 +44,6 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	}
 	free(ptr);
 	close(fp);
+
 	return (copiedletters);
 }
