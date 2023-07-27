@@ -1,0 +1,29 @@
+CC = gcc
+SRC = main.c functions.c utils.c
+OBJ = $(SRC:.c=.o)
+NAME = school
+CFLAGS = -Wall -Werror -Wextra -pedantic
+RM = /bin/rm -f
+
+.PHONY: all clean oclean fclean re
+
+all: $(NAME)
+
+$(NAME): $(OBJ)
+	$(CC) $(CFLAGS) -o $(NAME) $(OBJ)
+
+$(OBJ):
+	$(CC) $(CFLAGS) -c $(@:.o=.c)
+
+clean:
+	$(RM) $(NAME) *~ .*~ #*#
+
+oclean:
+	$(RM) $(OBJ)
+
+fclean: oclean clean
+
+re: fclean all
+
+# Prevents compilation if the m.h header file is missing
+$(OBJ): m.h
